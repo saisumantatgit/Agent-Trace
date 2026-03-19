@@ -1,0 +1,12 @@
+# Agent-Shield — Dependency-Aware Remediation
+#
+# Before risky edits (app factories, DI, persistence, schemas, routing, auth):
+# 1. Query impact: python repo_universe/scripts/query_impact.py --target <target>
+# 2. Restate the contract before editing
+# 3. Review blast radius, impacted tests, invariants
+# 4. Edit only after impact is acknowledged
+# 5. Verify against the impact surface
+# 6. Escalate if confidence is too low
+#
+# Build repo universe: python repo_universe/scripts/build_manifest.py
+# Validate integrity: python repo_universe/scripts/validate_universe.py

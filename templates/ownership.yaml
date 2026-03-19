@@ -1,0 +1,25 @@
+# Example ownership.yaml — curated ownership declarations
+#
+# Copy this to repo_universe/curated/ownership.yaml and customize for your repo.
+# Subsystem-level ownership is the default; target-level overrides subsystem defaults.
+
+owners:
+  subsystems:
+    api:
+      owner: "api-team"
+      criticality: "high"
+    persistence:
+      owner: "data-team"
+      criticality: "high"
+    auth:
+      owner: "security-team"
+      criticality: "high"
+    frontend:
+      owner: "frontend-team"
+      criticality: "medium"
+
+  targets:
+    - id: "file:src/app/deps.py"
+      owner: "platform"
+    - id: "symbol:src/app/deps.py:get_data_store"
+      owner: "platform"

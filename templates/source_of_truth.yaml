@@ -1,0 +1,26 @@
+# Example source_of_truth.yaml — declares which artifacts win when they diverge
+#
+# Copy this to repo_universe/curated/source_of_truth.yaml and customize for your repo.
+# Every topic must declare one primary source class.
+
+sources_of_truth:
+  - topic: "current-runtime-behavior"
+    primary: "code"
+    references:
+      - "file:src/app/deps.py"
+      - "file:src/app/factory.py"
+      - "test:tests/test_factory.py::test_injected_store_is_respected"
+    notes: "Code and tests beat documentation for current behavior"
+
+  - topic: "intended-architecture"
+    primary: "adr"
+    references:
+      - "adr_doc:docs/decisions/ADR-001-dependency-injection.md"
+    notes: "ADR is the intended architecture, but drift markers may lower confidence"
+
+  - topic: "api-contract"
+    primary: "code"
+    references:
+      - "file:src/app/routes.py"
+      - "test:tests/api/test_contracts.py"
+    notes: "API implementation and contract tests are authoritative for current behavior"

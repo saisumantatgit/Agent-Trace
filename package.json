@@ -1,0 +1,20 @@
+{
+  "name": "agent-shield",
+  "version": "1.0.0",
+  "description": "Agent-Shield — Dependency-aware remediation for AI agent workflows. Map blast radius before you edit, not after you break.",
+  "keywords": [
+    "claude-code-plugin",
+    "dependency-analysis",
+    "blast-radius",
+    "safe-remediation",
+    "repo-universe",
+    "impact-analysis",
+    "agent-safety"
+  ],
+  "author": "Sai Sumanth Battepati",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saisumantatgit/Agent-Shield"
+  }
+}

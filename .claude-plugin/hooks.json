@@ -1,0 +1,8 @@
+{
+  "hooks": [
+    {
+      "type": "SessionStart",
+      "command": "echo '🛡️ Agent-Shield loaded. Commands: /shield, /map, /query, /validate-universe'"
+    }
+  ]
+}

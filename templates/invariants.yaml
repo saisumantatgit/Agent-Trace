@@ -1,0 +1,44 @@
+# Example invariants.yaml — curated must-not-break contracts
+#
+# Copy this to repo_universe/curated/invariants.yaml and customize for your repo.
+# Every invariant must have at least one verification obligation.
+# All target, doc, and test references must resolve to real nodes in the repo universe.
+
+invariants:
+  - id: "respect-injected-dependency"
+    name: "Respect injected dependencies"
+    description: "Factory-created dependencies must not be replaced implicitly by direct instantiation"
+    targets:
+      - "symbol:src/app/factory.py:create_app"
+      - "symbol:src/app/deps.py:get_data_store"
+    docs:
+      - "adr_doc:docs/decisions/ADR-001-dependency-injection.md"
+    tests:
+      - "test:tests/test_factory.py::test_injected_store_is_respected"
+    verification_obligations:
+      - "Run factory integration tests"
+      - "Confirm injected dependencies are preserved in all runtime modes"
+    owner: "platform"
+    subsystem: "core"
+    criticality: "high"
+    source: "manual"
+    freshness: "2026-03-19T00:00:00Z"
+    confidence: 1.0
+
+  - id: "api-contract-stability"
+    name: "API response contract stability"
+    description: "Public API response shapes must not change without versioning"
+    targets:
+      - "endpoint:GET:/api/v1/status"
+    docs: []
+    tests:
+      - "test:tests/api/test_contracts.py::test_status_response_shape"
+    verification_obligations:
+      - "Run API contract tests"
+      - "Verify response schema matches OpenAPI spec"
+    owner: "api-team"
+    subsystem: "api"
+    criticality: "high"
+    source: "manual"
+    freshness: "2026-03-19T00:00:00Z"
+    confidence: 1.0
