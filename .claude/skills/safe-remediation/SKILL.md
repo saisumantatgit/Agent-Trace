@@ -47,6 +47,8 @@ Derive the target from the change request:
 
 ### 2. Run the agent query
 
+Dispatch the `impact-analyzer` agent to analyze blast radius from the query results. Use the `contract-mapper` agent to document the current contract at the edit target before making changes.
+
 If the repo-universe query interface is available, use it before editing.
 
 Preferred shape:

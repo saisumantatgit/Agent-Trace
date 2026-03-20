@@ -22,6 +22,10 @@ Optionally, a change type:
 - `doc` — documentation change
 - `test` — test change
 
+## What Happens
+
+Dispatch the `impact-analyzer` agent to analyze the blast radius for the given target. The agent reads the repo universe query output and produces a structured impact assessment.
+
 ## What It Returns
 
 ```json

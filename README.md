@@ -195,8 +195,11 @@ Confidence is reported as lower when using manual fallback.
 | [**Agent-PROVE**](https://github.com/saisumantatgit/Agent-PROVE) | Makes agents think before they act | "Prove it or it fails." |
 | [**Agent-Scribe**](https://github.com/saisumantatgit/Agent-Scribe) | Makes agents remember what they learned | "Nothing is lost." |
 | **Agent-Trace** | Makes agents see before they edit | "See the ripple effect before it happens." |
+| [**Agent-Cite**](https://github.com/saisumantatgit/Agent-Cite) | Evidence enforcement and citation auditing | "Cite it or it didn't happen." |
+| [**Agent-Drift**](https://github.com/saisumantatgit/Agent-Drift) | Intent drift detection and prevention | "Stay on target." |
+| [**Agent-Litmus**](https://github.com/saisumantatgit/Agent-Litmus) | Test quality validation | "If the test is weak, the code is suspect." |
 
-PROVE validates your thinking. Scribe records your learning. **Trace maps your blast radius.** Together: think rigorously, remember everything, edit safely.
+PROVE validates your thinking. Scribe records your learning. **Trace maps your blast radius.** Cite enforces evidence. Drift prevents wandering. Litmus guards test quality. Together: think rigorously, remember everything, edit safely, cite sources, stay focused, test thoroughly.
 
 ---
 

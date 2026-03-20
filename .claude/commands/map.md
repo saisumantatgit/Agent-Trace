@@ -9,7 +9,7 @@ Generate the dependency map for this repository.
 
 ## What It Does
 
-1. Scans the codebase for files, symbols, imports, routes, tests, and docs
+1. Dispatch the `manifest-builder` agent to scan the codebase for files, symbols, imports, routes, tests, and docs
 2. Generates `repo_universe/generated/manifest.json`, `nodes.json`, `edges.json`
 3. Reports coverage: what was mapped, what was missed, confidence levels
 

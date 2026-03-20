@@ -15,6 +15,7 @@ Check the integrity of your repo universe.
 4. **Overlay resolution** — all targets in invariants, ownership, and source-of-truth files resolve
 5. **Invariant completeness** — every invariant has at least one verification obligation
 6. **Staleness** — flags nodes or edges with timestamps older than a threshold
+7. **Contract consistency** — dispatch the `contract-mapper` agent to verify that curated contracts still match the codebase
 
 ## Usage
 
