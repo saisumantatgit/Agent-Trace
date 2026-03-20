@@ -128,8 +128,8 @@ def detect_endpoints(file_path: Path, source: str) -> list[dict]:
     patterns = [
         # FastAPI / Flask decorators
         r'@\w+\.(get|post|put|delete|patch)\s*\(\s*["\']([^"\']+)',
-        # Express-style
-        r'\w+\.(get|post|put|delete|patch)\s*\(\s*["\']([^"\']+)',
+        # Express-style (app, router, server, api, blueprint)
+        r'(?:app|router|server|api|blueprint)\.(get|post|put|delete|patch)\s*\(\s*["\']([^"\']+)',
     ]
     for pattern in patterns:
         for match in re.finditer(pattern, source, re.IGNORECASE):
@@ -292,8 +292,8 @@ def build_manifest(repo_root: Path, language: str | None = None) -> dict:
                     ep_node["id"] = ep_id
                     nodes.append(ep_node)
                     node_ids.add(ep_id)
-        except Exception:
-            pass
+        except Exception as e:
+            warnings.append(f"Endpoint detection failed for {rel_path}: {e}")
 
         # Map test files to their targets
         if is_test_file(file_path):
@@ -326,7 +326,10 @@ def main():
     parser.add_argument("--language", help="Primary language to scan")
     args = parser.parse_args()
 
-    repo_root = args.repo_root or get_repo_root()
+    repo_root = Path(args.repo_root) if args.repo_root else get_repo_root()
+    if not repo_root.exists():
+        print(f"Error: Repository root does not exist: {repo_root}", file=sys.stderr)
+        sys.exit(1)
     print(f"Scanning: {repo_root}")
 
     result = build_manifest(repo_root, args.language)

@@ -40,8 +40,13 @@ def now_iso() -> str:
 
 def load_json(path: Path) -> Any:
     """Load a JSON file."""
-    with open(path) as f:
-        return json.load(f)
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"JSON file not found: {path}")
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON in {path}: {e}")
 
 
 def save_json(path: Path, data: Any) -> None:
@@ -144,7 +149,7 @@ VALID_EDGE_TYPES = {
 SKIP_DIRS = {
     ".git", "__pycache__", "node_modules", ".venv", "venv",
     ".tox", ".mypy_cache", ".pytest_cache", ".ruff_cache",
-    "dist", "build", ".eggs", "*.egg-info",
+    "dist", "build", ".eggs",
     "repo_universe",
 }
 

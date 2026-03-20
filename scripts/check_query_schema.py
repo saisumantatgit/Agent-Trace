@@ -68,8 +68,15 @@ def main():
     args = parser.parse_args()
 
     if args.file:
-        with open(args.file) as f:
-            data = json.load(f)
+        try:
+            with open(args.file) as f:
+                data = json.load(f)
+        except FileNotFoundError:
+            print(f"Error: File not found: {args.file}", file=sys.stderr)
+            sys.exit(1)
+        except json.JSONDecodeError as e:
+            print(f"Error: Invalid JSON in {args.file}: {e}", file=sys.stderr)
+            sys.exit(1)
     else:
         data = json.load(sys.stdin)
 

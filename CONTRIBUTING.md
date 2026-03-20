@@ -40,3 +40,17 @@ The query output schema is locked in `docs/specs/query-contract.md`. Adding fiel
 2. Update `query_impact.py` to populate it
 3. Update `check_query_schema.py` to validate it
 4. Update the skill and prompts to use it
+
+## Submitting Changes
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Make your changes following the conventions above
+4. Commit with a descriptive message (`git commit -m "Add: description of change"`)
+5. Push to your fork (`git push origin feature/your-feature`)
+6. Open a Pull Request against `main`
+
+Pull requests should include:
+- Description of what changed and why
+- Any testing you performed
+- Reference to related issues (if applicable)

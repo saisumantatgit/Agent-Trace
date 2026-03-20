@@ -211,7 +211,10 @@ def main():
     parser.add_argument("--repo-root", type=Path, help="Repository root path")
     args = parser.parse_args()
 
-    repo_root = args.repo_root or get_repo_root()
+    repo_root = Path(args.repo_root) if args.repo_root else get_repo_root()
+    if not repo_root.exists():
+        print(f"Error: Repository root does not exist: {repo_root}", file=sys.stderr)
+        sys.exit(1)
     gen_dir = get_generated_dir(repo_root)
     cur_dir = get_curated_dir(repo_root)
 

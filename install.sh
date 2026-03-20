@@ -4,6 +4,13 @@
 
 set -e
 
+# Check Python version (scripts require 3.10+)
+if command -v python3 &>/dev/null; then
+  if ! python3 -c "import sys; assert sys.version_info >= (3, 10)" 2>/dev/null; then
+    echo "Warning: Python 3.10+ recommended for scripts. Some features may not work."
+  fi
+fi
+
 echo "🔍  Agent-Trace Installer"
 echo "========================="
 echo ""

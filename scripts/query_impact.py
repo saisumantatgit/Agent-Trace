@@ -173,13 +173,17 @@ def find_impacted_docs(universe: dict, target_id: str) -> list[str]:
                 other = edge["to"] if edge["from"] == target_id else edge["from"]
                 docs.append(other)
 
-    # Check ADR nodes that mention the target path
+    # Check ADR nodes whose content references the target path
     target_node = universe["node_index"].get(target_id)
     if target_node:
         target_path = target_node.get("path", "")
-        for node in universe["nodes"]:
-            if node["type"] == "adr_doc" and node["id"] not in docs:
-                docs.append(node["id"])
+        if target_path:
+            for node in universe["nodes"]:
+                if node["type"] == "adr_doc" and node["id"] not in docs:
+                    # Only include if the ADR's path overlaps with the target path
+                    adr_path = node.get("path", "")
+                    if target_path in adr_path or Path(target_path).stem in adr_path:
+                        docs.append(node["id"])
 
     return docs
 
@@ -354,7 +358,10 @@ def main():
     parser.add_argument("--repo-root", type=Path, help="Repository root path")
     args = parser.parse_args()
 
-    repo_root = args.repo_root or get_repo_root()
+    repo_root = Path(args.repo_root) if args.repo_root else get_repo_root()
+    if not repo_root.exists():
+        print(f"Error: Repository root does not exist: {repo_root}", file=sys.stderr)
+        sys.exit(1)
     universe = load_universe(repo_root)
 
     if not universe["nodes"]:
