@@ -1,4 +1,4 @@
-# Agent-Shield — Dependency-Aware Remediation
+# Agent-Trace — Dependency-Aware Remediation
 
 ## Rule: Query Before Risky Edits
 

@@ -1,11 +1,11 @@
 {
-  "name": "agent-shield",
-  "description": "Agent-Shield — Dependency-aware remediation for AI agent workflows. Maps blast radius before edits using a hybrid graph + curated contracts model. 4 commands, 3 agents, Python scripts for manifest building and impact queries.",
+  "name": "agent-trace",
+  "description": "Agent-Trace — Dependency-aware remediation for AI agent workflows. See the ripple effect before it happens. Maps blast radius before edits using a hybrid graph + curated contracts model. 4 commands, 3 agents, Python scripts for manifest building and impact queries.",
   "version": "1.0.0",
   "author": {
     "name": "Sai Sumanth Battepati"
   },
-  "homepage": "https://github.com/saisumantatgit/Agent-Shield",
+  "homepage": "https://github.com/saisumantatgit/Agent-Trace",
   "license": "MIT",
   "keywords": [
     "claude-code-plugin",

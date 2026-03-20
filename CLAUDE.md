@@ -1,6 +1,6 @@
-# Agent-Shield
+# Agent-Trace
 
-Agent-Shield is a Claude Code plugin that provides dependency-aware remediation. Before an agent edits risky code, it maps the blast radius using a hybrid graph + curated contracts model.
+Agent-Trace is a Claude Code plugin that provides dependency-aware remediation. Before an agent edits risky code, it maps the blast radius using a hybrid graph + curated contracts model.
 
 ## Architecture
 
@@ -14,7 +14,7 @@ Three layers:
 
 | Command | What It Does |
 |---------|-------------|
-| `/shield` | Full safe-remediation workflow |
+| `/trace` | Full safe-remediation workflow |
 | `/map` | Build/update the repo universe |
 | `/query` | Query impact of changing a target |
 | `/validate-universe` | Validate repo universe integrity |

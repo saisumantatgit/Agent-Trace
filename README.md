@@ -1,6 +1,6 @@
-# Agent-Shield
+# Agent-Trace
 
-> **Shield your code.**
+> **See the ripple effect before it happens.**
 > Dependency-aware remediation for AI agent workflows — map blast radius before you edit, not after you break.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -15,7 +15,7 @@ You've seen it happen: an agent fixes one file and silently breaks three others.
 
 Agents don't fail because they can't write code. They fail because **they can't see the blast radius.**
 
-Agent-Shield fixes that. Before any risky edit, it maps dependencies, surfaces invariants, and forces the agent to acknowledge what could break — then ties verification to the impacted surface, not just the local code path.
+Agent-Trace fixes that. Before any risky edit, it maps dependencies, surfaces invariants, and forces the agent to acknowledge what could break — then ties verification to the impacted surface, not just the local code path.
 
 ---
 
@@ -70,7 +70,7 @@ repo_universe/
 
 | Command | When | What It Does |
 |---------|------|-------------|
-| **`/shield`** | Before risky edits | Full 7-step safe remediation workflow |
+| **`/trace`** | Before risky edits | Full 7-step safe remediation workflow |
 | **`/map`** | Setup + periodic refresh | Build/update the repo universe |
 | **`/query <target>`** | Before editing a specific target | Query blast radius, tests, invariants |
 | **`/validate-universe`** | After changes to universe | Check integrity of nodes, edges, overlays |
@@ -78,7 +78,7 @@ repo_universe/
 ### Example
 
 ```bash
-/shield Fix the auth middleware to reject expired tokens — currently it silently passes them through
+/trace Fix the auth middleware to reject expired tokens — currently it silently passes them through
 ```
 
 Output: target, current contract, blast radius, impacted tests, invariants, verification plan, confidence score.
@@ -89,17 +89,17 @@ Output: target, current contract, blast radius, impacted tests, invariants, veri
 
 ```bash
 # Clone
-git clone https://github.com/saisumantatgit/Agent-Shield.git
+git clone https://github.com/saisumantatgit/Agent-Trace.git
 
 # Install into your project (auto-detects your CLI)
 cd your-project/
-bash /path/to/Agent-Shield/install.sh
+bash /path/to/Agent-Trace/install.sh
 ```
 
 Or for Claude Code, install as a plugin:
 
 ```bash
-cp -r Agent-Shield/ ~/.claude/plugins/agent-shield/
+cp -r Agent-Trace/ ~/.claude/plugins/agent-trace/
 ```
 
 ### What Gets Installed
@@ -108,7 +108,7 @@ cp -r Agent-Shield/ ~/.claude/plugins/agent-shield/
 |----------|-------------------|
 | **Claude Code** | `.claude/commands/*.md` + agents + skill + hook |
 | **Codex** | Appends to `AGENTS.md` |
-| **Cursor** | `.cursor/rules/shield.md` |
+| **Cursor** | `.cursor/rules/trace.md` |
 | **Aider** | Appends to `.aider.conf.yml` |
 | **Generic** | Raw prompt files |
 
@@ -120,7 +120,7 @@ Plus: `repo_universe/scripts/` (Python), curated overlay templates, and prompts.
 
 ```bash
 # 1. Install
-bash /path/to/Agent-Shield/install.sh
+bash /path/to/Agent-Trace/install.sh
 
 # 2. Build the repo universe
 /map
@@ -132,7 +132,7 @@ bash /path/to/Agent-Shield/install.sh
 /validate-universe
 
 # 5. Use before risky edits
-/shield "Fix the payment processing retry logic"
+/trace "Fix the payment processing retry logic"
 ```
 
 ---
@@ -172,7 +172,7 @@ Confidence is reported as lower when using manual fallback.
 |----------|--------|-------|
 | Claude Code | `.claude-plugin/plugin.json` | Full support (agents + commands + skill) |
 | Codex | `AGENTS.md` | Prompt-based |
-| Cursor | `.cursor/rules/shield.md` | Rules-based |
+| Cursor | `.cursor/rules/trace.md` | Rules-based |
 | Aider | `.aider.conf.yml` | Config-based |
 | Generic | `prompts/*.md` | Paste into any LLM |
 
@@ -194,9 +194,9 @@ Confidence is reported as lower when using manual fallback.
 |------|-------------|---------|
 | [**Agent-PROVE**](https://github.com/saisumantatgit/Agent-PROVE) | Makes agents think before they act | "Prove it or it fails." |
 | [**Agent-Scribe**](https://github.com/saisumantatgit/Agent-Scribe) | Makes agents remember what they learned | "Nothing is lost." |
-| **Agent-Shield** | Makes agents see before they edit | "Shield your code." |
+| **Agent-Trace** | Makes agents see before they edit | "See the ripple effect before it happens." |
 
-PROVE validates your thinking. Scribe records your learning. **Shield maps your blast radius.** Together: think rigorously, remember everything, edit safely.
+PROVE validates your thinking. Scribe records your learning. **Trace maps your blast radius.** Together: think rigorously, remember everything, edit safely.
 
 ---
 

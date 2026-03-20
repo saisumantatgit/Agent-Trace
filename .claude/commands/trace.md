@@ -1,9 +1,9 @@
 ---
-name: shield
+name: trace
 description: Run the full safe-remediation workflow — identify target, query impact, restate contract, inspect blast radius, edit, verify. Use before any risky code change.
 ---
 
-# /shield — Safe Remediation
+# /trace — Safe Remediation
 
 Run the full dependency-aware remediation workflow before making a risky edit.
 
@@ -42,5 +42,5 @@ Structured remediation report:
 ## Example
 
 ```
-/shield Fix the auth middleware to reject expired tokens — currently it silently passes them through
+/trace Fix the auth middleware to reject expired tokens — currently it silently passes them through
 ```

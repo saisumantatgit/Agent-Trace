@@ -1,7 +1,7 @@
 {
-  "name": "agent-shield",
+  "name": "agent-trace",
   "version": "1.0.0",
-  "description": "Agent-Shield — Dependency-aware remediation for AI agent workflows. Map blast radius before you edit, not after you break.",
+  "description": "Agent-Trace — Dependency-aware remediation for AI agent workflows. See the ripple effect before it happens.",
   "keywords": [
     "claude-code-plugin",
     "dependency-analysis",
@@ -15,6 +15,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/saisumantatgit/Agent-Shield"
+    "url": "https://github.com/saisumantatgit/Agent-Trace"
   }
 }

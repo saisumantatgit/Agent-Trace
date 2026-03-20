@@ -2,7 +2,7 @@
   "hooks": [
     {
       "type": "SessionStart",
-      "command": "echo '🛡️ Agent-Shield loaded. Commands: /shield, /map, /query, /validate-universe'"
+      "command": "echo '🔍 Agent-Trace loaded. Commands: /trace, /map, /query, /validate-universe'"
     }
   ]
 }

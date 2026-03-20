@@ -10,7 +10,7 @@ Product-specific additions:
 
 - Claude Code: `.claude/` directory with agents, commands, skills
 - Codex/OpenAI: `adapters/codex/AGENTS.md`
-- Cursor: `adapters/cursor/.cursor/rules/shield.md`
+- Cursor: `adapters/cursor/.cursor/rules/trace.md`
 - Aider: `adapters/aider/.aider.conf.yml`
 
 Keep procedural logic in `SKILL.md`.

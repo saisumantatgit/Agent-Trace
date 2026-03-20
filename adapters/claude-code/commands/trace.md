@@ -1,11 +1,11 @@
 ---
-name: shield
+name: trace
 description: Run safe remediation — map blast radius before editing risky code
 ---
 
 Load and follow the safe-remediation skill from the prompts directory.
 
-Read `prompts/shield.md` for the full workflow. Execute all 7 steps:
+Read `prompts/trace.md` for the full workflow. Execute all 7 steps:
 
 1. Identify the edit target
 2. Query impact (script or manual fallback)

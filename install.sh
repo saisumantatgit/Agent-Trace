@@ -1,10 +1,10 @@
 #!/bin/bash
-# Agent-Shield Installer
+# Agent-Trace Installer
 # Detects your CLI tool and installs the right adapter.
 
 set -e
 
-echo "🛡️  Agent-Shield Installer"
+echo "🔍  Agent-Trace Installer"
 echo "========================="
 echo ""
 
@@ -65,26 +65,26 @@ case $CLI in
         cp -r "$SCRIPT_DIR/references" .
         echo ""
         echo "Plugin hook: Add this to your .claude/settings.json hooks:"
-        echo '  "hooks": { "SessionStart": [{ "command": "echo 🛡️ Agent-Shield loaded. Commands: /shield, /map, /query, /validate-universe" }] }'
+        echo '  "hooks": { "SessionStart": [{ "command": "echo 🔍 Agent-Trace loaded. Commands: /trace, /map, /query, /validate-universe" }] }'
         ;;
     codex)
         if [ -f "AGENTS.md" ]; then
             echo "" >> AGENTS.md
             cat "$SCRIPT_DIR/adapters/codex/AGENTS.md" >> AGENTS.md
-            echo "Appended shield commands to existing AGENTS.md"
+            echo "Appended trace commands to existing AGENTS.md"
         else
             cp "$SCRIPT_DIR/adapters/codex/AGENTS.md" .
         fi
         ;;
     cursor)
         mkdir -p .cursor/rules
-        cp "$SCRIPT_DIR/adapters/cursor/.cursor/rules/shield.md" .cursor/rules/
+        cp "$SCRIPT_DIR/adapters/cursor/.cursor/rules/trace.md" .cursor/rules/
         ;;
     aider)
         if [ -f ".aider.conf.yml" ]; then
             echo "" >> .aider.conf.yml
             cat "$SCRIPT_DIR/adapters/aider/.aider.conf.yml" >> .aider.conf.yml
-            echo "Appended shield config to existing .aider.conf.yml"
+            echo "Appended trace config to existing .aider.conf.yml"
         else
             cp "$SCRIPT_DIR/adapters/aider/.aider.conf.yml" .
         fi
@@ -95,10 +95,10 @@ case $CLI in
 esac
 
 echo ""
-echo "✅ Agent-Shield installed for $CLI"
+echo "✅ Agent-Trace installed for $CLI"
 echo ""
 echo "Commands available:"
-echo "  /shield             — Safe remediation (full workflow)"
+echo "  /trace              — Safe remediation (full workflow)"
 echo "  /map                — Build repo universe"
 echo "  /query <target>     — Query impact of a change"
 echo "  /validate-universe  — Validate repo universe integrity"
@@ -107,4 +107,4 @@ echo "Next steps:"
 echo "  1. Run /map to generate the repo universe"
 echo "  2. Customize repo_universe/curated/*.yaml for your invariants"
 echo "  3. Run /validate-universe to check integrity"
-echo "  4. Use /shield before risky edits"
+echo "  4. Use /trace before risky edits"

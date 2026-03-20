@@ -1,4 +1,4 @@
-# Agent-Shield — Dependency-Aware Remediation
+# Agent-Trace — Dependency-Aware Remediation
 #
 # Before risky edits (app factories, DI, persistence, schemas, routing, auth):
 # 1. Query impact: python repo_universe/scripts/query_impact.py --target <target>

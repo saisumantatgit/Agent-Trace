@@ -1,6 +1,6 @@
 ---
 name: map
-description: Build or update the repo universe — generates manifest, nodes, and edges from the codebase. Run this before using /query or /shield.
+description: Build or update the repo universe — generates manifest, nodes, and edges from the codebase. Run this before using /query or /trace.
 ---
 
 # /map — Build Repo Universe
@@ -42,4 +42,4 @@ Or with options:
 1. Review the generated manifest for warnings
 2. Create curated overlays in `repo_universe/curated/` (use templates from `templates/`)
 3. Run `/validate-universe` to check integrity
-4. Use `/query` or `/shield` to query impact before edits
+4. Use `/query` or `/trace` to query impact before edits

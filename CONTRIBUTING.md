@@ -1,4 +1,4 @@
-# Contributing to Agent-Shield
+# Contributing to Agent-Trace
 
 ## Adding Language Support
 
